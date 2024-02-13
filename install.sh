@@ -23,7 +23,8 @@ bash input.sh "Enter swap size: " "1" "^[0-9]+[MmGg]$"
 # read LUKS_PASSWORD_SECOND
 bash compare.sh "encryption password"
 
-EXPECT_PATH="$(nix-shell --quiet -p expect --run "bash -c 'which expect'")"
+# EXPECT_PATH="$(nix-shell --quiet -p expect --run "bash -c 'which expect'")"
+bash nix-export.sh "expect"
 
 umount -l /mnt || true
 
